@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['animejs'], 
+  transpilePackages: ['animejs'],
 };
 
 export default nextConfig;
