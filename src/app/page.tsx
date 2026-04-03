@@ -2,13 +2,17 @@
 
 import { KeyframeEaseIn } from '@boxicons/react';
 import HomeStyle from './page.module.css';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { createTimeline } from 'animejs';
+import Home from '@/pages/home/page'
 
-export default function Home() {
+// import { useRouter } from 'next/navigation'
+
+export default function App() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const fillRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLParagraphElement | null>(null);
+  const [renderHomeState, setRenderHomeState] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current || !fillRef.current || !textRef.current) return;
@@ -16,7 +20,7 @@ export default function Home() {
     const tl = createTimeline();
 
     tl.add(containerRef.current, {
-      '--stop': ['0%','50%','50%' ,'100%'],
+      '--stop': ['0%', '50%', '50%', '100%'],
       duration: 3000,
     });
 
@@ -25,30 +29,47 @@ export default function Home() {
     }, '0');
 
     tl.add(textRef.current, {
-      paddingLeft: ['0%','65%'],
+      paddingLeft: ['0%', '65%'],
     }, '-=3000');
 
   }, []);
 
+  // const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // router.push('/home')
+      setRenderHomeState(true);
+      // console.log('1')
+    }, 3000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <div ref={containerRef} className={HomeStyle.HomeContainer}>
-      <div className={HomeStyle.LoadingTextContainer}>
-        <p className={HomeStyle.LoadingText}></p>
-      </div>
+    <>
+      {renderHomeState ? (<Home />) : (
+        <div ref={containerRef} className={HomeStyle.HomeContainer}>
+          <div className={HomeStyle.LoadingTextContainer}>
+            <p className={HomeStyle.LoadingText}></p>
+          </div>
 
-      <div className={HomeStyle.GoTMContainer}>
-        <h1 className={HomeStyle.HomeTitle}>goTm</h1>
+          <div className={HomeStyle.GoTMContainer}>
+            <h1 className={HomeStyle.HomeTitle}>goTm</h1>
 
-        <div className={HomeStyle.LoadingBarContainer}>
-          <div ref={fillRef} className={HomeStyle.LoadingFill}></div>
+            <div className={HomeStyle.LoadingBarContainer}>
+              <div ref={fillRef} className={HomeStyle.LoadingFill}></div>
 
-          <p ref={textRef} className={HomeStyle.LoadingBarWelcome}>
-            Hello <KeyframeEaseIn width={40} height={40} />
-          </p>
+              <p ref={textRef} className={HomeStyle.LoadingBarWelcome}>
+                Hello <KeyframeEaseIn width={40} height={40} />
+              </p>
+            </div>
+          </div>
+
+          <div className={HomeStyle.LoadingTextContainer}></div>
         </div>
-      </div>
+      )}
+    </>
 
-      <div className={HomeStyle.LoadingTextContainer}></div>
-    </div>
   );
 }
