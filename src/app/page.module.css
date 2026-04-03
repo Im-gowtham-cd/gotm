@@ -23,7 +23,7 @@
 
 .HomeTitle {
   font-family: 'Charger';
-  font-size: clamp(40px, 15vw, 500px);
+  font-size: clamp(100px, 15vw, 500px);
   color: var(--text);
   mix-blend-mode: difference;
   margin: 0;
@@ -67,11 +67,11 @@
 }
 
 .LoadingBarWelcome {
-  transform: translateX(0px);
-  padding-left: 2%;
+  /* transform: translateX(0%); */
+  padding-left: 0%; 
   mix-blend-mode: difference;
   color: var(--text);
-  font-size: clamp(40px, 15vw, 40px);
+  font-size: clamp(10px, 15vw, 40px);
   font-family: 'Charger';
   display: flex;
   justify-content: center;

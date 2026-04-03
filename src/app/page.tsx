@@ -25,7 +25,7 @@ export default function Home() {
     }, '0');
 
     tl.add(textRef.current, {
-      translateX: [0, 275],
+      paddingLeft: ['0%','65%'],
     }, '-=3000');
 
   }, []);
