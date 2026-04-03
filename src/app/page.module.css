@@ -56,7 +56,6 @@
   overflow: hidden;
 }
 
-/* 👇 Real element instead of ::before */
 .LoadingFill {
   position: absolute;
   top: 0;

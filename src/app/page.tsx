@@ -3,7 +3,7 @@
 import { KeyframeEaseIn } from '@boxicons/react';
 import HomeStyle from './page.module.css';
 import { useRef, useEffect } from 'react';
-import { animate, createTimeline } from 'animejs';
+import { createTimeline } from 'animejs';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement | null>(null);
