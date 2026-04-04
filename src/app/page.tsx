@@ -41,7 +41,7 @@ export default function App() {
       // router.push('/home')
       setRenderHomeState(true);
       // console.log('1')
-    }, 3000)
+    }, 4000)
 
     return () => clearTimeout(timer)
   }, [])
