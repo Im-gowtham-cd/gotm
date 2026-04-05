@@ -9,9 +9,9 @@ export default function Home() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const x = e.clientX;
-      const width = window.innerWidth;
-      const percent = (x/width) * 100;
+      const y = e.clientY;
+      const height = window.innerHeight;
+      const percent = (y / height) * 100 + 5;
       if (containerRef.current) {
         containerRef.current.style.setProperty("--value", `${percent}%`);
       }
@@ -24,7 +24,10 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className={HomeComponentStyle.HomeContainer}>
-        <NavBar />
+      <NavBar />
+      <div className={HomeComponentStyle.HeroContainer}>
+        <h1>Im<p>-gowtham-</p>cd</h1>
+      </div>
     </div>
   );
 }
