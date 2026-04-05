@@ -20,7 +20,7 @@ export default function App() {
     const tl = createTimeline();
 
     tl.add(containerRef.current, {
-      '--stop': ['0%', '50%', '50%', '100%'],
+      '--stop': ['0%', '52%', '52%', '100%'],
       duration: 3000,
     });
 
