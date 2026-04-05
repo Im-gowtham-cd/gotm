@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import HomeComponentStyle from "./page.module.css";
+import NavBar from "../navBar/page";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,7 +24,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className={HomeComponentStyle.HomeContainer}>
-        
+        <NavBar />
     </div>
   );
 }
