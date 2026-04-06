@@ -11,7 +11,15 @@ export default function Home() {
     const handleMouseMove = (e: MouseEvent) => {
       const y = e.clientY;
       const height = window.innerHeight;
-      const percent = (y / height) * 100 + 5;
+      const x = e.clientX;
+      const width = window.innerWidth;
+      // let percent =0;
+
+      let percent = (((y / height) + (x / width)) / 2) * 100;
+
+      if (y !== 0) {
+        percent += 5;
+      }
       if (containerRef.current) {
         containerRef.current.style.setProperty("--value", `${percent}%`);
       }

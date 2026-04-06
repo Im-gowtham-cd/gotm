@@ -2,8 +2,11 @@
   --value: 0%;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* padding-top: 10vh; */
-  background: linear-gradient(180Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
+  background: linear-gradient(152.7Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
 }
 
 .HeroContainer {
@@ -18,10 +21,13 @@
   font-size: 150px;
   display: flex;
   justify-content: center;
+    width: 80vw;
   align-items: center;
 }
 
 .HeroContainer h1 p {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--text);
+  -webkit-text-stroke: 1px var(--text);
+  /* font-size: 200px; */
+  /* font-family: 'Charger'; */
 }
