@@ -1,33 +1,67 @@
 .HomeContainer {
   --value: 0%;
+  --pika: 0%;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* padding-top: 10vh; */
+  /* background: linear-gradient(180Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%); */
   background: linear-gradient(152.7Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
 }
 
 .HeroContainer {
-  padding-top: 10vh;
+  /* padding-top: 10vh; */
   color: var(--text);
   mix-blend-mode: difference;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 100vh;
 }
 
 .HeroContainer h1 {
   font-family: var(--font-unbounded);
   text-align: center;
-  font-size: 150px;
+  font-size: 200px;
+  /* margin-top: 1%; */
   display: flex;
   justify-content: center;
-    width: 80vw;
+  width: 85vw;
   align-items: center;
+  /* letter-spacing: -5px; */
+  /* mix-blend-mode:overlay; */
 }
 
 .HeroContainer h1 p {
   color: transparent;
-  -webkit-text-stroke: 1px var(--text);
-  /* font-size: 200px; */
-  /* font-family: 'Charger'; */
+  -webkit-text-stroke: 2px var(--text);
+  font-size: 200px;
+  font-family: 'Pgr';
+}
+
+.HomeFooterContainer{
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--text);
+  position: relative;
+}
+
+.PiKaCHu{
+  position: absolute;
+  top: -90%;
+  /* left: 0; */
+  height: 90px;
+  width: 100px;
+  left: var(--pika);
+  mix-blend-mode:difference;
+}
+
+.HomeMiddleContainer{
+  height: 50vh;
+  width: 80vw;
+  border: 1px solid var(--text);
 }
