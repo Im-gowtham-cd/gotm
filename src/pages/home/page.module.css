@@ -43,25 +43,91 @@
   font-family: 'Pgr';
 }
 
-.HomeFooterContainer{
+.HomeFooterContainer {
   height: 10vh;
   width: 100vw;
   background-color: var(--text);
   position: relative;
 }
 
-.PiKaCHu{
+.PiKaCHu {
   position: absolute;
   top: -90%;
   /* left: 0; */
   height: 90px;
-  width: 100px;
+  width: 110px;
   left: var(--pika);
-  mix-blend-mode:difference;
+  mix-blend-mode: difference;
 }
 
-.HomeMiddleContainer{
+.HomeMiddleContainer {
   height: 50vh;
   width: 80vw;
+  /* border: 1px solid var(--text); */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* grid-template-areas:
+    "t1 t1 t1"
+    "t2 t3 t4"; */
+}
+
+/* .cardContainer{
   border: 1px solid var(--text);
+  background-color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  height: 90%;
+  width: 50%;
+  position: relative;
+  border: 1px solid var(--text);
+}
+
+.cardSpan{
+  display: flex;
+  height: 20%;
+  justify-content: space-between;
+
+  span{
+    height: 100%;
+    width: 5%;
+    background-color: var(--text);
+  }
+} */
+
+
+.textContainer {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  /* border: 1px solid var(--text); */
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  font-size: 19px;
+  font-family: var(--font-unbounded);
+}
+
+.ResumeContainer {
+  /* border: 1px solid var(--text); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: var(--bg);
+    font-family: 'Charger';
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--text);
+    padding: 10px 50px;
+  }
 }

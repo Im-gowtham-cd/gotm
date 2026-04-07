@@ -1,5 +1,6 @@
 "use client";
 
+import { FileDetail } from '@boxicons/react';
 import { useEffect, useRef } from "react";
 import HomeComponentStyle from "./page.module.css";
 import NavBar from "../navBar/page";
@@ -47,7 +48,24 @@ export default function Home() {
       <div className={HomeComponentStyle.HeroContainer}>
         <h1>Im<p>-gowtham-</p>cd</h1>
         <div className={HomeComponentStyle.HomeMiddleContainer}>
-          
+          {/* <div className={HomeComponentStyle.cardContainer}>
+              <div className={HomeComponentStyle.card} >
+                  <div className={HomeComponentStyle.cardSpan} >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                  </div>
+              </div>
+          </div> */}
+          <ul className={HomeComponentStyle.textContainer}>
+            <li>Building scalable, production-grade web applications with a focus on performance, clean architecture, and real-world problem solving.</li>
+            <li>Experienced in MERN, Next.js, and Spring Boot, designing efficient APIs and reliable backend systems.</li>
+            <li>I build things that scale.</li>
+          </ul>
+          <div className={HomeComponentStyle.ResumeContainer}>
+            <a href="" download>ResuME <FileDetail /></a>
+          </div>
         </div>
         <div className={HomeComponentStyle.HomeFooterContainer}>
           <Image src={pika} alt="PiKaCHu" ref={pikachuRef} className={HomeComponentStyle.PiKaCHu} />
