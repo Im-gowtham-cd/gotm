@@ -23,7 +23,7 @@ export default function Home() {
       if (y !== 0) percent += 5;
 
       // const current = ((percent - 5) / 100) * 90;
-      const current = percent - 10;
+      const current = 5 + (x / width) * 83;
 
       if (containerRef.current) {
         containerRef.current.style.setProperty("--value", `${percent}%`);
