@@ -8,8 +8,8 @@
   flex-direction: column;
   align-items: center;
   /* padding-top: 10vh; */
-  /* background: linear-gradient(180Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%); */
-  background: linear-gradient(152.7Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
+  background: linear-gradient(90Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
+  /* background: linear-gradient(152.7Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%); */
 }
 
 .HeroContainer {
