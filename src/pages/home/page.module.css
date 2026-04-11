@@ -23,18 +23,18 @@
   height: 100vh;
 }
 
-.HeroContainer h1 {
+/* .HeroContainer h1 {
   font-family: var(--font-unbounded);
   text-align: center;
   font-size: 200px;
-  /* margin-top: 1%; */
+  margin-top: 1%;
   display: flex;
   justify-content: center;
   width: 85vw;
   align-items: center;
-  /* letter-spacing: -5px; */
-  /* mix-blend-mode:overlay; */
-}
+  letter-spacing: -5px; 
+  mix-blend-mode:overlay;
+} */
 
 .HeroContainer h1 p {
   color: transparent;
@@ -130,4 +130,63 @@
     background-color: var(--text);
     padding: 10px 50px;
   }
+}
+
+.FrontEndContainer {
+  height: 80vh;
+  width: 90%;
+  border: 1px solid var(--text);
+  mix-blend-mode: difference;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "c1 c1 c1"
+    "d1 d1 d2";
+  font-family: var(--font-unbounded);
+  align-items: center;
+  /* place-items: center; */
+}
+
+.frontContainer{
+  grid-area: c1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.frontText {
+  font-size: 230px;
+  grid-area: h1;
+  /* text-align: ; */
+}
+
+.frontBar {
+  font-size: 200px;
+  grid-area: s1;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  width: 80%;
+  background: var(--text);
+}
+
+.frontTextEnd {
+  font-size: 230px;
+  /* text-align: start; */
+  grid-area: h2;
+}
+
+
+.devText {
+  font-size: 190px;
+  grid-area: d1;
+}
+
+
+.devTextEnd {
+  font-size: 20px;
+  grid-area: d2;
 }
