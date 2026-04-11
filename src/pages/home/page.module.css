@@ -44,15 +44,25 @@
 }
 
 .HomeFooterContainer {
-  height: 10vh;
+  height: 6vh;
   width: 100vw;
   background-color: var(--text);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* .HomeFooterContainer p{
+  font-family: var(--font-unbounded);
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--bg);
+} */
 
 .PiKaCHu {
   position: absolute;
-  top: -90%;
+  top: -150%;
   /* left: 0; */
   height: 90px;
   width: 110px;
@@ -135,10 +145,10 @@
 .FrontEndContainer {
   height: 80vh;
   width: 90%;
-  border: 1px solid var(--text);
+  /* border: 1px solid var(--text); */
   mix-blend-mode: difference;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "c1 c1 c1"
@@ -148,7 +158,7 @@
   /* place-items: center; */
 }
 
-.frontContainer{
+.frontContainer {
   grid-area: c1;
   display: flex;
   justify-content: space-between;
@@ -169,7 +179,7 @@
   display: flex;
   justify-content: center;
   height: 10%;
-  width: 80%;
+  width: 60%;
   background: var(--text);
 }
 
@@ -185,8 +195,48 @@
   grid-area: d1;
 }
 
+.devContainer {
+  grid-area: d2;
+
+}
+
 
 .devTextEnd {
   font-size: 20px;
-  grid-area: d2;
+  width: 100%;
+  text-align: justify;
+}
+
+.InfiniteScrollConainer {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  gap: 100px;
+  width: 100%;
+}
+
+.InfiniteScrollContent {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 100px;
+  animation: infiniteScroll 10s linear infinite;
+}
+
+.InfiniteScrollContent {
+  color: var(--bg);
+  font-size: 25px;
+  font-family: var(--font-unbounded);
+}
+
+@keyframes infiniteScroll {
+  from{
+    transform: translateX(0);
+  }  
+  to{
+    transform: translateX(-50%);
+  }
 }

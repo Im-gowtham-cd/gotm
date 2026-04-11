@@ -41,8 +41,8 @@ export default function Home() {
 
       if (frontBar.current) {
         // frontBar.current.style.width = `${(percent/100) + 50}%`
-        if (percent == 0) {
-          frontBar.current.style.width = `${front + 180}px`
+        if (front < 2) {
+          frontBar.current.style.width = `${front + 480}px`
         }
         else {
           frontBar.current.style.width = `${front * 80}px`
@@ -81,15 +81,40 @@ export default function Home() {
         </div> */}
         <div className={HomeComponentStyle.FrontEndContainer}>
           <div className={HomeComponentStyle.frontContainer}>
-            <h1 className={HomeComponentStyle.frontText} ref={frontText}>FRoNt</h1>
+            <h1 className={HomeComponentStyle.frontText} ref={frontText}>FRoNT</h1>
             <span className={HomeComponentStyle.frontBar} ref={frontBar}></span>
-            <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>eNd</h1>
+            <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>End</h1>
           </div>
           <h1 className={HomeComponentStyle.devText}>DeVelOpEr</h1>
-          <p className={HomeComponentStyle.devTextEnd}>p</p>
+          <div className={HomeComponentStyle.devContainer}>
+            <p className={HomeComponentStyle.devTextEnd}>coMpuTer sciEnce & enGineeRing stuDent buiLdinG faSt, scaLabLe, inTeracTive web exPerienCes—reAct, next.js, spriNg boOt & meRn—foCused on perFormanCe, cLean archiTecTure & soLvinG comPlex proBlems.</p>
+          </div>
         </div>
         <div className={HomeComponentStyle.HomeFooterContainer}>
           <Image src={pika} alt="PiKaCHu" ref={pikachuRef} className={HomeComponentStyle.PiKaCHu} />
+          {/* <p>ScRoll doWn</p> */}
+          <div className={HomeComponentStyle.InfiniteScrollConainer}>
+            <ul className={HomeComponentStyle.InfiniteScrollContent}>
+              <li>Html</li>
+              <li>Css</li>
+              <li>MERN</li>
+              <li>Next</li>
+              <li>Angular</li>
+              <li>Nest</li>
+              <li>SpringBoot</li>
+              <li>Vue</li>
+            </ul>
+            <ul className={HomeComponentStyle.InfiniteScrollContent} aria-hidden>
+              <li>Html</li>
+              <li>Css</li>
+              <li>MERN</li>
+              <li>Next</li>
+              <li>Angular</li>
+              <li>Nest</li>
+              <li>SpringBoot</li>
+              <li>Vue</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
