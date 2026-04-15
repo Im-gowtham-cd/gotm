@@ -1,12 +1,23 @@
+.Home{
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
 .HomeContainer {
   --value: 0%;
   --pika: 0%;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  top: 0;
+  /* z-index: -1; */
   /* padding-top: 10vh; */
   background: linear-gradient(90Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%);
   /* background: linear-gradient(152.7Deg, var(--text) 0%, var(--text) var(--value), var(--bg) var(--value), var(--bg) 100%); */
@@ -16,11 +27,13 @@
   /* padding-top: 10vh; */
   color: var(--text);
   mix-blend-mode: difference;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: end;
   height: 100vh;
+
 }
 
 /* .HeroContainer h1 {
@@ -153,7 +166,8 @@
   grid-template-areas:
     "c1 c1 c1"
     "d1 d1 d2";
-  font-family: var(--font-unbounded);
+  /* font-family: var(--font-unbounded); */
+  font-family: 'Rom';
   align-items: center;
   /* place-items: center; */
 }
@@ -168,7 +182,7 @@
 }
 
 .frontText {
-  font-size: 230px;
+  font-size: 330px;
   grid-area: h1;
   /* text-align: ; */
 }
@@ -184,14 +198,14 @@
 }
 
 .frontTextEnd {
-  font-size: 230px;
+  font-size: 330px;
   /* text-align: start; */
   grid-area: h2;
 }
 
 
 .devText {
-  font-size: 190px;
+  font-size: 250px;
   grid-area: d1;
 }
 
@@ -203,15 +217,16 @@
 
 .devTextEnd {
   font-size: 20px;
+  font-family: 'KGT';
   width: 100%;
   text-align: justify;
 }
 
 .InfiniteScrollConainer {
   display: flex;
-  overflow: hidden;
   height: 100%;
-  gap: 100px;
+  overflow: hidden;
+  /* gap: 100px; */
   width: 100%;
 }
 
@@ -222,21 +237,29 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 100px;
   animation: infiniteScroll 10s linear infinite;
+  gap: 100px;
+}
+
+.InfiniteScrollAnime {
+  width: max-content;
+  display: flex;
+  gap: 100px;
+  height: 100%;
 }
 
 .InfiniteScrollContent {
   color: var(--bg);
-  font-size: 25px;
+  font-size: 20px;
   font-family: var(--font-unbounded);
 }
 
 @keyframes infiniteScroll {
-  from{
+  from {
     transform: translateX(0);
-  }  
-  to{
-    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 }

@@ -24,7 +24,7 @@
 
 .navBarContainer ul {
     height: 100%;
-    width: 20vw;
+    width: 30vw;
     display: flex;
     /* padding: 2%; */
     display: flex;
@@ -49,5 +49,8 @@
     background-color: var(--text);
     color: var(--bg);
     text-decoration: none;
-    padding: 0.5% 1%;
+    padding: 0.5% 0%;
+    width: 7vw;
+    display: flex;
+    justify-content: center;
 }

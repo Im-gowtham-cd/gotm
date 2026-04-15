@@ -6,6 +6,7 @@ import HomeComponentStyle from "./page.module.css";
 import NavBar from "../navBar/page";
 import Image from "next/image";
 import pika from "../../../assets/image/pika.gif";
+import About from '@/app/about/page'
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,10 +66,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} className={HomeComponentStyle.HomeContainer}>
+    <div className={HomeComponentStyle.Home}>
       <NavBar />
-      <div className={HomeComponentStyle.HeroContainer}>
-        {/* <h1>Im<p>-gowtham-</p>cd</h1>
+      <div ref={containerRef} className={HomeComponentStyle.HomeContainer}>
+        <div className={HomeComponentStyle.HeroContainer}>
+          {/* <h1>Im<p>-gowtham-</p>cd</h1>
         <div className={HomeComponentStyle.HomeMiddleContainer}>
           <ul className={HomeComponentStyle.textContainer}>
             <li>Building scalable, production-grade web applications with a focus on performance, clean architecture, and real-world problem solving.</li>
@@ -79,44 +81,48 @@ export default function Home() {
             <a href="" download>ResuME <FileDetail /></a>
           </div>
         </div> */}
-        <div className={HomeComponentStyle.FrontEndContainer}>
-          <div className={HomeComponentStyle.frontContainer}>
-            <h1 className={HomeComponentStyle.frontText} ref={frontText}>FRoNT</h1>
-            <span className={HomeComponentStyle.frontBar} ref={frontBar}></span>
-            <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>End</h1>
+          <div className={HomeComponentStyle.FrontEndContainer}>
+            <div className={HomeComponentStyle.frontContainer}>
+              <h1 className={HomeComponentStyle.frontText} ref={frontText}>FRoNT</h1>
+              <span className={HomeComponentStyle.frontBar} ref={frontBar}></span>
+              <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>End</h1>
+            </div>
+            <h1 className={HomeComponentStyle.devText}>DEVELOPER</h1>
+            <div className={HomeComponentStyle.devContainer}>
+              <p className={HomeComponentStyle.devTextEnd}>coMpuTer sciEnce & enGineeRing stuDent buiLdinG faSt, scaLabLe, inTeracTive web exPerienCes—reAct, next.js, spriNg boOt & meRn—foCused on perFormanCe, cLean archiTecTure & soLvinG comPlex proBlems.</p>
+            </div>
           </div>
-          <h1 className={HomeComponentStyle.devText}>DeVelOpEr</h1>
-          <div className={HomeComponentStyle.devContainer}>
-            <p className={HomeComponentStyle.devTextEnd}>coMpuTer sciEnce & enGineeRing stuDent buiLdinG faSt, scaLabLe, inTeracTive web exPerienCes—reAct, next.js, spriNg boOt & meRn—foCused on perFormanCe, cLean archiTecTure & soLvinG comPlex proBlems.</p>
-          </div>
-        </div>
-        <div className={HomeComponentStyle.HomeFooterContainer}>
-          <Image src={pika} alt="PiKaCHu" ref={pikachuRef} className={HomeComponentStyle.PiKaCHu} />
-          {/* <p>ScRoll doWn</p> */}
-          <div className={HomeComponentStyle.InfiniteScrollConainer}>
-            <ul className={HomeComponentStyle.InfiniteScrollContent}>
-              <li>Html</li>
-              <li>Css</li>
-              <li>MERN</li>
-              <li>Next</li>
-              <li>Angular</li>
-              <li>Nest</li>
-              <li>SpringBoot</li>
-              <li>Vue</li>
-            </ul>
-            <ul className={HomeComponentStyle.InfiniteScrollContent} aria-hidden>
-              <li>Html</li>
-              <li>Css</li>
-              <li>MERN</li>
-              <li>Next</li>
-              <li>Angular</li>
-              <li>Nest</li>
-              <li>SpringBoot</li>
-              <li>Vue</li>
-            </ul>
+          <div className={HomeComponentStyle.HomeFooterContainer}>
+            <Image src={pika} alt="PiKaCHu" ref={pikachuRef} className={HomeComponentStyle.PiKaCHu} />
+            {/* <p>ScRoll doWn</p> */}
+            <div className={HomeComponentStyle.InfiniteScrollConainer}>
+              <div className={HomeComponentStyle.InfiniteScrollAnime}>
+                <ul className={HomeComponentStyle.InfiniteScrollContent}>
+                  <li>Html</li>
+                  <li>Css</li>
+                  <li>MERN</li>
+                  <li>Next</li>
+                  <li>Angular</li>
+                  <li>Nest</li>
+                  <li>SpringBoot</li>
+                  <li>Vue</li>
+                </ul>
+                <ul className={HomeComponentStyle.InfiniteScrollContent} aria-hidden>
+                  <li>Html</li>
+                  <li>Css</li>
+                  <li>MERN</li>
+                  <li>Next</li>
+                  <li>Angular</li>
+                  <li>Nest</li>
+                  <li>SpringBoot</li>
+                  <li>Vue</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <About />
     </div>
   );
 }

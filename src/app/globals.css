@@ -13,6 +13,21 @@
   src: url('../../assets/font/ChargerEcoBold.otf');
 }
 
+@font-face {
+  font-family: 'Rom';
+  src: url('../../assets/font/Romien.otf');
+}
+
+@font-face {
+  font-family: 'Gondens';
+  src: url('../../assets/font/Gondens\ DEMO.otf');
+}
+
+@font-face {
+  font-family: 'KGT';
+  src: url('../../assets/font/KGThinkingOutLoud.ttf');
+}
+
 :root{
   --text: #00ff00;
   --bg:#000000;
