@@ -16,7 +16,8 @@ export default function Home() {
   const frontText = useRef<HTMLHeadingElement>(null);
   const frontEnd = useRef<HTMLHeadingElement>(null);
   const prevRef = useRef(0);
-  const developerRef = useRef<HTMLDivElement>(null);
+  const developerRef = useRef<HTMLHeadingElement>(null);
+  const text = "DEVELOPER"
 
   // useEffect(() => {
   //   const handleMouseMove = (e: MouseEvent) => {
@@ -111,7 +112,13 @@ export default function Home() {
       }
 
       if (developerRef.current) {
-        developerRef.current.style.transform = `scale(1,${2 + (percent / 200)})`;
+        const chars = developerRef.current.querySelectorAll<HTMLElement>(`.${HomeComponentStyle.char}`);
+        chars.forEach((char, i) => {
+          let angle = i % 2 === 0 ? -percent/50 : percent/50;
+          const scale = 1 + (percent / 800);
+          if(percent == 0) angle = 0;
+          char.style.transform = `rotate(${angle}deg) scale(${scale})`;
+        });
       }
 
       if (frontText.current) {
@@ -152,7 +159,11 @@ export default function Home() {
               <span className={HomeComponentStyle.frontBar} ref={frontBar}></span>
               <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>End</h1>
             </div>
-            <h1 className={HomeComponentStyle.devText} ref={developerRef}>DEVELOPER</h1>
+            <h1 className={HomeComponentStyle.devText} ref={developerRef}>
+              {text.split("").map((c, i) => (
+                <span key={i} className={HomeComponentStyle.char}>{c}</span>
+              ))}
+            </h1>
             <div className={HomeComponentStyle.devContainer}>
               <p className={HomeComponentStyle.devTextEnd}>coMpuTer sciEnce & enGineeRing stuDent buiLdinG faSt, scaLabLe, inTeracTive web exPerienCes—reAct, next.js, spriNg boOt & meRn—foCused on perFormanCe, cLean archiTecTure & soLvinG comPlex proBlems.</p>
             </div>

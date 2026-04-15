@@ -210,14 +210,23 @@
   /* --size:1%; */
   font-size: 250px;
   grid-area: d1;
+  width: 100%;
+  perspective: 800px;
+  transform-style: preserve-2d;
   transform: scale(1,2);
+}
+
+.char {
+  display: inline-block;
+  /* transform-style: preserve-3d; */
+  backface-visibility: hidden;
+  letter-spacing: 10px;
+  transition: transform 0.1s linear;
 }
 
 .devContainer {
   grid-area: d2;
-
 }
-
 
 .devTextEnd {
   font-size: 20px;
