@@ -7,6 +7,7 @@ import NavBar from "../navBar/page";
 import Image from "next/image";
 import pika from "../../../assets/image/pika.gif";
 import About from '@/app/about/page'
+import { Scale } from "@boxicons/react";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,24 +16,85 @@ export default function Home() {
   const frontText = useRef<HTMLHeadingElement>(null);
   const frontEnd = useRef<HTMLHeadingElement>(null);
   const prevRef = useRef(0);
+  const developerRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     const y = e.clientY;
+  //     const x = e.clientX;
+  //     const height = window.innerHeight;
+  //     const width = window.innerWidth;
+  //     let percent = (((y / height) + (x / width)) / 2) * 100;
+  //     const front = (y / height) * 100;
+
+  //     if (y !== 0) percent += 5;
+
+  //     // const current = ((percent - 5) / 100) * 90;
+  //     const current = 5 + (x / width) * 83;
+
+  //     if (containerRef.current) {
+  //       containerRef.current.style.setProperty("--value", `${percent}%`);
+  //       containerRef.current.style.setProperty("--pika", `${current}%`);
+  //     }
+
+  //     if (pikachuRef.current) {
+  //       pikachuRef.current.style.transform = current < prevRef.current ? "scaleX(-1)" : "scaleX(1)";
+  //     }
+  //     prevRef.current = current;
+
+  //     if (frontBar.current) {
+  //       // frontBar.current.style.width = `${(percent/100) + 50}%`
+  //       if (front < 2) {
+  //         frontBar.current.style.width = `${front + 480}px`
+  //       }
+  //       else {
+  //         frontBar.current.style.width = `${front * 80}px`
+  //         // console.log(front * 0.8)
+  //         // console.log(front)
+  //       }
+  //     }
+  //     if (frontText.current) {
+  //       frontText.current.style.letterSpacing = `-${percent / 2}px`
+  //     }
+  //     if (frontEnd.current) {
+  //       frontEnd.current.style.letterSpacing = `-${percent / 2}px`
+  //     }
+  //   };
+
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const y = e.clientY;
-      const x = e.clientX;
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const totalScroll = rect.height - window.innerHeight;
+
+      let progress = -rect.top / totalScroll;
+
+      progress = Math.max(0, Math.min(1, progress));
+
       const height = window.innerHeight;
       const width = window.innerWidth;
+
+      const x = progress * width;
+      const y = progress * height;
+
       let percent = (((y / height) + (x / width)) / 2) * 100;
       const front = (y / height) * 100;
 
       if (y !== 0) percent += 5;
 
-      // const current = ((percent - 5) / 100) * 90;
       const current = 5 + (x / width) * 83;
 
       if (containerRef.current) {
         containerRef.current.style.setProperty("--value", `${percent}%`);
         containerRef.current.style.setProperty("--pika", `${current}%`);
+        // containerRef.current.style.setProperty("--size", `${current}%`);
       }
 
       if (pikachuRef.current) {
@@ -41,27 +103,30 @@ export default function Home() {
       prevRef.current = current;
 
       if (frontBar.current) {
-        // frontBar.current.style.width = `${(percent/100) + 50}%`
         if (front < 2) {
-          frontBar.current.style.width = `${front + 480}px`
-        }
-        else {
-          frontBar.current.style.width = `${front * 80}px`
-          console.log(front * 0.8)
-          console.log(front)
+          frontBar.current.style.width = `${front + 480}px`;
+        } else {
+          frontBar.current.style.width = `${front * 80}px`;
         }
       }
+
+      if (developerRef.current) {
+        developerRef.current.style.transform = `scale(1,${2 + (percent / 200)})`;
+      }
+
       if (frontText.current) {
-        frontText.current.style.letterSpacing = `-${percent / 3}px`
+        frontText.current.style.transform = `scale(1,${1 + (percent / 300)})`;
+        frontText.current.style.letterSpacing = `-${percent / 2}px`;
       }
+
       if (frontEnd.current) {
-        frontEnd.current.style.letterSpacing = `-${percent / 3}px`
+        frontEnd.current.style.letterSpacing = `-${percent / 2}px`;
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -87,7 +152,7 @@ export default function Home() {
               <span className={HomeComponentStyle.frontBar} ref={frontBar}></span>
               <h1 className={HomeComponentStyle.frontTextEnd} ref={frontEnd}>End</h1>
             </div>
-            <h1 className={HomeComponentStyle.devText}>DEVELOPER</h1>
+            <h1 className={HomeComponentStyle.devText} ref={developerRef}>DEVELOPER</h1>
             <div className={HomeComponentStyle.devContainer}>
               <p className={HomeComponentStyle.devTextEnd}>coMpuTer sciEnce & enGineeRing stuDent buiLdinG faSt, scaLabLe, inTeracTive web exPerienCes—reAct, next.js, spriNg boOt & meRn—foCused on perFormanCe, cLean archiTecTure & soLvinG comPlex proBlems.</p>
             </div>
