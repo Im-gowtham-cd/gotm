@@ -3,13 +3,15 @@
     color: var(--text);
     mix-blend-mode: difference;
     position: fixed;
-    top:0;
+    top: 0;
     z-index: 1000;
     display: flex;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
     align-items: center;
     justify-content: space-between;
-    height: fit-content;
-    width:90vw;
+    width: 90vw;
     /* padding: 1% 0; */
     height: 10vh;
 }

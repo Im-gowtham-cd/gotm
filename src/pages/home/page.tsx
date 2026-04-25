@@ -7,7 +7,7 @@ import NavBar from "../navBar/page";
 import Image from "next/image";
 import pika from "../../../assets/image/pika.gif";
 import About from '@/app/about/page'
-import { Scale } from "@boxicons/react";
+// import { Scale } from "@boxicons/react";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,24 +105,24 @@ export default function Home() {
 
       if (frontBar.current) {
         if (front < 2) {
-          frontBar.current.style.width = `${front + 480}px`;
+          frontBar.current.style.width = `${front + 1000}px`;
         } else {
-          frontBar.current.style.width = `${front * 80}px`;
+          frontBar.current.style.width = `${front * 100}px`;
         }
       }
 
       if (developerRef.current) {
         const chars = developerRef.current.querySelectorAll<HTMLElement>(`.${HomeComponentStyle.char}`);
         chars.forEach((char, i) => {
-          let angle = i % 2 === 0 ? -percent/50 : percent/50;
-          const scale = 1 + (percent / 800);
+          let angle = i % 2 === 0 ? -percent/10 : percent/10;
+          const scale = 1 + (percent / 1000);
           if(percent == 0) angle = 0;
           char.style.transform = `rotate(${angle}deg) scale(${scale})`;
         });
       }
 
       if (frontText.current) {
-        frontText.current.style.transform = `scale(1,${1 + (percent / 300)})`;
+        frontText.current.style.transform = `scale(1,${1 + (percent / 500)})`;
         frontText.current.style.letterSpacing = `-${percent / 2}px`;
       }
 
