@@ -1,5 +1,7 @@
 import AboutStyle from '@/app/about/page.module.css';
-import { FileDetail } from '@boxicons/react';
+import { FileDetail, FireAlt } from '@boxicons/react';
+import Image from 'next/image'
+import Eren from '../../../assets/image/Eren.png'
 
 export default function About() {
     return (
@@ -30,6 +32,8 @@ export default function About() {
                     <FileDetail />
                 </a>
             </div>
+            <FireAlt className={AboutStyle.AboutDecoration} />
+            <span className={AboutStyle.AboutErenCont}><Image src={Eren} alt={'Eren'} className={AboutStyle.AboutEren} /></span>
         </div>
     );
 }
