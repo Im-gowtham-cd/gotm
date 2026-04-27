@@ -185,6 +185,7 @@
   font-size: 250px;
   grid-area: h1;
   font-family: 'Rom';
+  /* letter-spacing: 5px; */
   /* transform: scale(1,1.3); */
   /* text-align: ; */
 }

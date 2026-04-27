@@ -123,19 +123,19 @@
 }
 
 .AboutDecoration {
-    height: 20vh;
-    width:10vw;
-    margin-left: 45%;
+    height: 18vh;
+    width:9vw;
+    margin-left: 44.5%;
     /* border: 1px solid; */
-    /* background-color: var(--text); */
-    color: var(--text);
+    background-color: var(--text);
+    color: var(--bg);
     /* color: var(--text); */
     border-radius: 50%;
     mix-blend-mode: difference;
     position: sticky;
-    top: 35%;
+    top: 34.5%;
     z-index: 5;
-    /* padding: 1%; */
+    padding: 1%;
 }
 
 .AboutErenCont {
